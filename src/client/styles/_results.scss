@@ -1,0 +1,226 @@
+@use './variables' as v;
+
+@mixin heading($margin_left, $margin-right) {
+  font-weight: 700;
+  background-color: v.$background-color-grey;
+  border-radius: $margin_left $margin-right 0 0;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.strong_positive {
+  color: v.$strong-positive-color !important;
+}
+.positive {
+  color: v.$positive-color !important;
+}
+
+.neutral {
+  color: v.$neutral-color !important;
+}
+
+.negative {
+  color: v.$negative-color !important;
+}
+
+.strong_negative {
+  color: v.$strong-negative-color !important;
+  font-weight: bold;
+}
+
+.results_header {
+  display: grid;
+  grid-template-columns: minmax(400px, 3fr) minmax(300px, 1fr);
+
+  .content_heading {
+    border-radius: 5px 0 0 0;
+  }
+  .tag_cloud_heading {
+    border-radius: 0 5px 0 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .original_document {
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.9;
+    color: v.$font-color-secondary;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 0.5rem;
+  }
+
+  .tagCloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    margin-left: 1rem;
+    line-height: 1.4rem;
+    align-items: baseline;
+
+    span {
+      font-size: v.$tag-font-size;
+      font-family: v.$condensed-font;
+      padding: 5px;
+      font-weight: 500;
+      align-self: top;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        transition: 0.2s linear;
+        transform: scale(1.05) translateY(-1px);
+      }
+    }
+
+    .positive,
+    .negative {
+      font-size: calc(v.$tag-font-size * 1.1) !important;
+    }
+
+    .strong_positive,
+    .strong_negative {
+      font-size: calc(v.$tag-font-size * 1.6) !important;
+    }
+  }
+}
+
+.subjectivity {
+  padding: 0.5rem;
+}
+
+.grey_heading {
+  @include heading(5px, 5px);
+}
+
+.results_score {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1rem;
+  padding: 0.5rem;
+  margin: 2rem 0 1.5rem;
+  .score_tag {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .score_range {
+    display: flex;
+    align-items: flex-end;
+    font-size: v.$small-font-size;
+
+    .score_range_text {
+      margin-right: 1rem;
+    }
+
+    .scores_names {
+      display: flex;
+      .strong_negative {
+        padding-left: 20px;
+      }
+      .neutral {
+        padding-left: 40px;
+      }
+      .positive {
+        padding-left: 50px;
+      }
+    }
+  }
+}
+
+.topics,
+.keywords,
+.entities {
+  display: grid;
+
+  div {
+    @include heading(5px, 5px);
+    margin-bottom: 1.5rem;
+  }
+  div:nth-of-type(1n + 1) {
+    border-radius: 5px 0 0 0;
+  }
+  div:nth-of-type(1n + 2) {
+    border-radius: 0;
+  }
+
+  span {
+    margin: 0 0.5rem;
+  }
+}
+.topics,
+.keywords {
+  grid-template-columns: minmax(100px, 3fr) minmax(100px, 1fr);
+}
+
+.entities,
+.entity_heading {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(max-content, 2fr) minmax(
+      100px,
+      1fr
+    );
+}
+
+.entities {
+  span:nth-of-type(3n + 2) {
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .results_header {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'a'
+      'b'
+      'c'
+      'd';
+    .content_heading {
+      grid-area: a;
+      border-radius: 5px 5px 0 0;
+    }
+    .tag_cloud_heading {
+      grid-area: c;
+      border-radius: 5px 5px 0 0;
+      justify-content: flex-start;
+    }
+    .original_document {
+      grid-area: b;
+    }
+    .tagCloud {
+      grid-area: d;
+    }
+  }
+
+  .results_score {
+    display: block;
+    .score_tag {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .entity_heading {
+    display: flex;
+    justify-content: space-between;
+  }
+  .entities {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    span:nth-of-type(3n + 1) {
+      text-align: left;
+    }
+    span:nth-of-type(3n + 2) {
+      text-align: center;
+    }
+
+    span:nth-of-type(3n + 3) {
+      border-bottom: 1px solid v.$font-color-secondary;
+      text-align: right;
+    }
+  }
+
+  .topics,
+  .keywords {
+    grid-template-columns: minmax(100px, 2fr) minmax(100px, 1fr);
+  }
+}

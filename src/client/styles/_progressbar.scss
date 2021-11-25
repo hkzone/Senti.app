@@ -1,0 +1,108 @@
+@use './variables' as v;
+
+@mixin progress($start_color, $end_color, $width, $time, $animation) {
+  height: 16px;
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.05)
+  );
+  transition: 0.4s linear;
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+  width: $width;
+  background-color: $end_color;
+  animation: $animation $time;
+  @keyframes #{$animation} {
+    0% {
+      width: 0%;
+      background-color: $start_color;
+    }
+    100% {
+      width: $width;
+      background-color: $end_color;
+    }
+  }
+}
+
+.container {
+  width: 270px;
+  text-align: center;
+}
+.progress2 {
+  padding: 2px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25),
+    0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress_bar_strong_positive {
+  @include progress(
+    v.$strong-positive-color-light,
+    v.$strong-positive-color,
+    100%,
+    4s,
+    anim_strong_positive
+  );
+}
+
+.progress_bar_positive {
+  @include progress(
+    v.$positive-color-light,
+    v.$positive-color,
+    75%,
+    4s,
+    anim_positive
+  );
+}
+
+.progress_bar_neutral {
+  @include progress(
+    v.$neutral-color-light,
+    v.$neutral-color,
+    50%,
+    3s,
+    anim_neutral
+  );
+}
+
+.progress_bar_negative {
+  @include progress(
+    v.$negative-color-light,
+    v.$negative-color,
+    35%,
+    2s,
+    anim_negative
+  );
+}
+
+.progress_bar_neutral {
+  @include progress(
+    v.$neutral-color-light,
+    v.$neutral-color,
+    50%,
+    3s,
+    anim_neutral
+  );
+}
+.progress_bar_negative {
+  @include progress(
+    v.$negative-color-light,
+    v.$negative-color,
+    35%,
+    2s,
+    anim_negative
+  );
+}
+
+.progress_bar_strong_negative {
+  @include progress(
+    v.$strong-negative-color-light,
+    v.$strong-negative-color,
+    15%,
+    2s,
+    anim_strong_negative
+  );
+}

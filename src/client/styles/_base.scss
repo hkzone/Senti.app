@@ -1,0 +1,74 @@
+@use './variables' as v;
+
+* {
+  color: v.$font-color;
+  line-height: 1.9;
+  font-size: v.$normal-font-size;
+  font-family: v.$body-font;
+  scroll-behavior: smooth;
+  accent-color: v.$accent-color;
+}
+
+body {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  // background-image: url('./../assets/pexels-cottonbro-3944417.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 400px auto;
+  background-color: white;
+  width: 85%;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: v.$heading-font-size;
+}
+
+section {
+  margin: 1.5rem auto;
+}
+
+hr {
+  border-top-color: rgba(117, 117, 117, 0.09);
+  margin: 2rem auto;
+  width: 99.5%;
+}
+textarea {
+  font-weight: 400;
+}
+
+.panel {
+  background: v.$background-color;
+  border-radius: v.$panel-radius;
+  box-shadow: v.$box-shadow;
+}
+
+.info {
+  color: #333333 !important;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: rgba(27, 198, 153, 0.27);
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: v.$font-text;
+  font-weight: 500 !important;
+  font-size: 1.05rem;
+  strong {
+    font-weight: bold;
+    color: v.$font-color;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  main {
+    max-width: 1150px;
+  }
+}
