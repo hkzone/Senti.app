@@ -230,12 +230,13 @@ const updateUI = (data) => {
                   <div>
                 </section>`;
   } else {
+    // eslint-disable-next-line no-console
+    console.log(`code:${data.status.code}, message: ${data.status.msg}`);
     resultsHTML = `
-                <div>
-                <h1>Sorry!</h1>
-                <i class="fas fa-car-crash"></i>
+                <div class='error_container panel'>
+                <h3>Sorry!</h3>
+                <object data='./assets/exclamation-triangle.svg'></object>
                 <p>${data.status.msg}</p>
-                <p>(error code${data.status.code})</p>
                 </div>`;
   }
 

@@ -1,6 +1,12 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
-import handleSubmit from './js/formHandler';
+import {
+  handleSubmit,
+  setDefaultMessage,
+  checkTextareaMaxLength,
+  handleInputTypeSelector,
+} from './js/formHandler';
+
 import { app, scrollToId } from './js/app';
 
 import configParticles from './assets/particles.json';
@@ -16,7 +22,14 @@ import './styles/_particles.scss';
 import './styles/_results.scss';
 import './styles/_progressbar.scss';
 
+import './assets/exclamation-triangle.svg';
+
 //Call app function on DOMContentLoaded event
-window.addEventListener('DOMContentLoaded', app);
+window.addEventListener('DOMContentLoaded', () => {
+  app();
+  setDefaultMessage();
+  checkTextareaMaxLength();
+  handleInputTypeSelector();
+});
 
 export { handleSubmit, app, scrollToId };

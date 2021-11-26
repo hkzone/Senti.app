@@ -14,11 +14,13 @@
   "description": "",
   "dependencies": {
     "axios": "^0.24.0",
+    "babel-jest": "^27.3.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "form-data": "^2.3.3",
     "particles.js": "^2.0.0",
+    "valid-url": "^1.0.9",
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0",
@@ -26,6 +28,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
@@ -54,6 +58,9 @@
     "webpack-bundle-analyzer": "^4.5.0"
   },
   "jest": {
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   }
 }

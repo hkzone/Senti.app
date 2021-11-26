@@ -1,78 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Test</title>
-  </head>
 
-  <body>
-    <header>
-      <div class="header_container">
-        <div id="particles-js"></div>
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SENTI.APP</title>
+</head>
+
+<body>
+  <header>
+    <div class="header_container">
+      <div id="particles-js"></div>
+    </div>
+    <div class="logo"><span>SENTI</span><span>.APP</span></div>
+    <div class="header_text">
+      Welcome to the new level of sentiment analisys
+    </div>
+  </header>
+
+  <main>
+    <div class="info panel">
+      <strong>SENTI.APP</strong> is solution for performing a detailed
+      multilingual <strong>sentiment analysis</strong> of texts from different
+      sources. It identifies the <strong>positive</strong>,
+      <strong>negative</strong>, <strong>neutral</strong> polarity in any
+      text, extracts aspect-based <strong>sentiment</strong>, distinguishes
+      <strong>facts</strong> and <strong>opinions</strong>. It also detects
+      <strong>irony</strong> and <strong>polarity</strong> disagreement.
+    </div>
+    <section class="search">
+      <div class="panel">
+        <form class="search_form" onsubmit="return Client.handleSubmit(event)">
+          <h3>Select what type of input to analyse:</h3>
+
+          <div class="checkbox">
+            <input type="radio" id="text" name="type" value="txt" checked />
+            <label for="text">Text</label>
+          </div>
+
+          <div class="checkbox">
+            <input type="radio" id="url" name="type" value="url" />
+            <label for="url">URL</label>
+          </div>
+          <p id="message"></p>
+
+          <textarea rows="5" maxlength="10000" id="input-text" placeholder="Insert text to analyse..." required></textarea>
+          <div class="analize-button" onclick="return Client.handleSubmit(event)">
+            <span>Analyze</span>
+            <div id="particles-js2"></div>
+          </div>
+          <div>
+        </form>
       </div>
-      <div class="logo"><span>SENTI</span><span>.APP</span></div>
-      <div class="header_text">
-        Welcome to the new level of sentiment analisys
-      </div>
-    </header>
+    </section>
+    <section>
+      <div id="results"></div>
+    </section>
+  </main>
 
-    <main>
-      <div class="info panel">
-        <strong>SENTI.APP</strong> is solution for performing a detailed
-        multilingual <strong>sentiment analysis</strong> of texts from different
-        sources. It identifies the <strong>positive</strong>,
-        <strong>negative</strong>, <strong>neutral</strong> polarity in any
-        text, extracts aspect-based <strong>sentiment</strong>, distinguishes
-        <strong>facts</strong> and <strong>opinions</strong>. It also detects
-        <strong>irony</strong> and <strong>polarity</strong> disagreement.
-      </div>
-      <section class="search">
-        <div class="panel">
-          <form
-            class="search_form"
-            onsubmit="return Client.handleSubmit(event)"
-          >
-            <h3>Select what type of input to analyse:</h3>
+  <footer>
+    <p>Vitaliy Vlasyuk © 2021</p>
+  </footer>
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+</body>
 
-            <div class="checkbox">
-              <input type="radio" id="text" name="type" value="txt" checked />
-              <label for="url">Text</label>
-            </div>
-
-            <div class="checkbox">
-              <input type="radio" id="url" name="type" value="url" />
-              <label for="url">URL</label>
-            </div>
-            <p>Please enter your text for analysis or use test one.</p>
-
-            <textarea
-              rows="5" maxlength="10000"
-              id="input-text"
-              placeholder="Insert text to analyse..."
-              required
-            ></textarea>
-            <div class="analize-button" onclick="return Client.handleSubmit(event)">
-              <span>Analyze</span>
-              <div id="particles-js2"></div>
-            </div>
-            <div>
-          </form>
-        </div>
-      </section>
-      <section>
-        <div id="results"></div>
-      </section>
-    </main>
-
-    <footer><p>Vitaliy Vlasyuk © 2021</p></footer>
-    <script>
-      // Check that service workers are supported
-      if ('serviceWorker' in navigator) {
-        // Use the window load event to keep the page load performant
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js');
-        });
-      }
-    </script>
-  </body>
 </html>

@@ -43,29 +43,3 @@
   border-radius: 25px;
   z-index: 100;
 }
-
-.analize-button {
-  margin: 1rem auto 0.8rem;
-  align-self: center;
-  cursor: pointer;
-  border-radius: 25px;
-
-  span {
-    position: absolute;
-    margin: 0 auto;
-    z-index: 9999;
-    color: #fff;
-    left: 50%;
-    transform: translate(-50%, 10%);
-  }
-
-  box-shadow: v.$light-shadow;
-  &:hover,
-  &:focus {
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: v.$dark-shadow;
-  }
-  &:hover {
-    transform: translateY(-1px);
-  }
-}
