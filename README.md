@@ -44,7 +44,7 @@ $ npm -v
 1. Fork this repo, then clone the app down to your computer:
 
 ```bash
-$ git clone https://github.com/*.git
+$ git clone https://github.com/hkzone/Senti.app.git
 ```
 
 2. `cd` into your new folder and install all the
