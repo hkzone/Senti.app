@@ -1,6 +1,6 @@
 # SENTI.APP
 
-<img src="https://github.com/hkzone/Senti.app.git/blob/master/demo/demo.gif" alt="Senti.app" width="612px">
+<img src="https://github.com/hkzone/Senti.app/blob/master/demo/demo.gif" alt="Senti.app" width="612px">
 
 ## Description
 
