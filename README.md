@@ -80,9 +80,7 @@ Testing is done with [Jest](https://github.com/facebook/jest). This project has 
 To run tests you can use the following NPM command:
 
 ```
-
 $ npm run test
-
 ```
 
 ---
