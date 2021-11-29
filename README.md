@@ -2,6 +2,8 @@
 
 <img src="https://github.com/hkzone/Senti.app/blob/master/demo/demo.gif" alt="Senti.app" width="800sentipx">
 
+For live demo please visit 👉 https://senti-app-1.herokuapp.com/
+
 ## Description
 
 SENTI.APP is a single-page web application that allows users to perform a detailed **multilingual sentiment** analysis of texts from different sources.
