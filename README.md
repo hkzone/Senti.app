@@ -60,7 +60,6 @@ $ npm i
 4. Configure environment variables by creating new `.env` file in the root of your project. Fill the file with variables as bellow:
 
 ```bash
-  NODE_ENV=development
   PORT=8080
   MeaningCloudAPIKey=**************************
 ```
