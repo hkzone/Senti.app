@@ -69,7 +69,7 @@ const server = app.listen(port, () => {
   console.log(`App is running on port ${port}...`);
 });
 
-// 4)For heroku deployment only
+// 4)For heroku deployment
 const shutdown = (signal) => (err) => {
   console.log(`${signal}...`);
   if (err) console.error(err.stack || err);
