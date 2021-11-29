@@ -43,26 +43,26 @@ $ npm -v
 
 1. Fork this repo, then clone the app down to your computer:
 
-```bash
-$ git clone https://github.com/hkzone/Senti.app.git
-```
+   ```bash
+   $ git clone https://github.com/hkzone/Senti.app.git
+   ```
 
 2. `cd` into your new folder and install all the
    dependencies by running:
 
-```bash
-$ npm i
-```
+   ```bash
+   $ npm i
+   ```
 
 3. Sign up for API keys with [MeaningCloud](https://www.meaningcloud.com/developer/sentiment-analysis)
    <br>
 
 4. Configure environment variables by creating new `.env` file in the root of your project. Fill the file with variables as bellow:
 
-```bash
-  PORT=8080
-  MeaningCloudAPIKey=**************************
-```
+   ```bash
+   PORT=8080
+   MeaningCloudAPIKey=**************************
+   ```
 
 5. Run the app in development mode at http://localhost:8081/, in production mode at http://localhost:8080/
 
@@ -72,14 +72,20 @@ $ npm i
    |     `npm start`      |      Run project       |
    |    `npm run dev`     | Run webpack dev server |
 
+---
+
 ## Testing
 
 Testing is done with [Jest](https://github.com/facebook/jest). This project has a Testing Units that can be found at `__test__` folder in the root directory.
 To run tests you can use the following NPM command:
 
 ```
+
 $ npm run test
+
 ```
+
+---
 
 ## Error handling
 
