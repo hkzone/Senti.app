@@ -31,7 +31,7 @@ const fetchMeaningCloudData = async (req, res) => {
     const response = await axios.post(
       `https://api.meaningcloud.com/sentiment-2.1?key=${
         process.env.MeaningCloudAPIKey
-      }&${req.params.type}=${encodeURIComponent(req.params.text)}&lang=en`
+      }&${req.params.type}=${encodeURIComponent(req.params.text)}&lang=auto`
     );
 
     //check if status is success

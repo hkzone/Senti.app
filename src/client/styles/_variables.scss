@@ -1,18 +1,19 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@600&family=Assistant:wght@300;500;600&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cabin+Condensed:wght@500&display=swap');
 
 /*========== Colors ==========*/
 
 $background-color: #fefefe;
 $background-color-grey: #f2f2f2;
+$background-color-footer: #006d7e;
+$background-color-light-green: rgba(27, 198, 153, 0.27);
 $accent-color: #006d7e;
 $clr-white: #fff;
 $light-shadow: 0 6px 6px rgba(0, 0, 0, 0.19);
 $dark-shadow: 0 12px 12px rgba(0, 0, 0, 0.19);
 $box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+$error-text: #d8000c;
+$error-background-color: #ffbaba;
 
 /*========== Colors for sentiments ==========*/
 $positive-color-light: rgba(0, 128, 0, 0.1);
@@ -32,6 +33,7 @@ $font-text: 'Cormorant Garamond', serif;
 $secondary-font: 'Expletus Sans', cursive;
 $condensed-font: 'Cabin Condensed', sans-serif;
 $font-color: #555555; //Granite Gray
+$font-color-dark: #333333;
 $font-color-secondary: #6d6d64;
 $headline-font-size: 2.5rem;
 $big-font-size: 1.5rem;

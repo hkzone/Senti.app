@@ -1,7 +1,8 @@
 import { isWebUri } from 'valid-url';
-import { updateUI } from './updateUI';
+import updateUI from './updateUI';
+import defaultData from './data/data';
 
-//sets default messages for the text input
+//Sets default messages for the text input
 const setDefaultMessage = (type = 'txt') => {
   const msgField = document.querySelector('#message');
   if (type === 'txt')
@@ -35,15 +36,26 @@ const checkTextareaMaxLength = () => {
   });
 };
 
+//set random default text for input
+const setRandomDefaultText = (clear = false) => {
+  if (clear) document.getElementById('input-text').value = '';
+  else {
+    const randomIndex = Math.floor(Math.random() * defaultData.length);
+    document.getElementById('input-text').value = defaultData[randomIndex];
+  }
+};
+
 //update default message depending on type of radio button selected
 const handleInputTypeSelector = () => {
   const url = document.querySelector('#url');
   url.addEventListener('change', () => {
     setDefaultMessage('url');
+    setRandomDefaultText(true);
   });
   const txt = document.querySelector('#text');
   txt.addEventListener('change', () => {
     setDefaultMessage('txt');
+    setRandomDefaultText();
   });
 };
 
@@ -83,4 +95,5 @@ export {
   setDefaultMessage,
   checkTextareaMaxLength,
   handleInputTypeSelector,
+  setRandomDefaultText,
 };
