@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const dotenv = require('dotenv');
 const axios = require('axios').default;
 
@@ -55,7 +56,6 @@ const fetchMeaningCloudData = async (req, res) => {
     //if no know errors throw error
     else throw new Error('undentified Api Error');
   } catch (error) {
-    // eslint-disable-next-line no-console
     res.status(500).json({
       status: 'error',
       data: {
@@ -65,7 +65,7 @@ const fetchMeaningCloudData = async (req, res) => {
         },
       },
     });
-    // eslint-disable-next-line no-console
+
     console.log('error', error.message);
   }
 };
