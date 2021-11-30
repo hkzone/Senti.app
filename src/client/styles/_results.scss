@@ -221,7 +221,7 @@
   }
 
   .entities {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 1fr;
     span:nth-of-type(3n + 1) {
       text-align: left;
     }
@@ -239,5 +239,21 @@
   .topics,
   .keywords {
     grid-template-columns: minmax(100px, 2fr) minmax(100px, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .results_header .tagCloud {
+    line-height: 1.15rem !important;
+
+    .positive,
+    .negative {
+      font-size: calc($tag-font-size * 0.9) !important;
+    }
+
+    .strong_positive,
+    .strong_negative {
+      font-size: calc($tag-font-size * 1.1);
+    }
   }
 }

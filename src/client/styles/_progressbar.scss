@@ -87,3 +87,13 @@
     anim_strong_negative
   );
 }
+
+@media screen and (max-width: 480px) {
+  .score_range {
+    flex-direction: column;
+    align-items: center !important;
+    .score_range_text {
+      margin: 0.2rem 0;
+    }
+  }
+}
