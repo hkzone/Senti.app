@@ -80,7 +80,7 @@ const handleSubmit = async (event) => {
 
   //fetch data from the server
   try {
-    const res = await fetch(`/nlp/${type}&${encodeURIComponent(input)}`);
+    const res = await fetch(`/api/${type}&${encodeURIComponent(input)}`);
     const data = await res.json();
     updateUI(data.data);
   } catch (err) {

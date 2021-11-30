@@ -79,3 +79,9 @@
     transform: scale(0.95) translateY(1px);
   }
 }
+
+@media screen and (max-width: 480px) {
+  .panel {
+    border-radius: 0;
+  }
+}

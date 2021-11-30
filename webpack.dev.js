@@ -1,8 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   mode: 'development',
@@ -40,4 +39,16 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin(),
   ],
+  devServer: {
+    historyApiFallback: true,
+    hot: true,
+    host: 'localhost', // Defaults to `localhost`
+    port: 8081, // Defaults to 8080
+    proxy: {
+      '/api/*': {
+        target: 'http://localhost:8080/',
+        secure: false,
+      },
+    },
+  },
 };

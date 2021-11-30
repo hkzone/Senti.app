@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
   res.sendFile('/dist/index.html');
 });
 
-app.get('/nlp/:type&:text', (req, res) => {
+app.get('/api/:type&:text', (req, res) => {
   fetchMeaningCloudData(req, res);
 });
 

@@ -28,3 +28,14 @@
   font-size: $big-font-size;
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: calc($headline-font-size * 0.7);
+  }
+  .header_text {
+    $big-font-size: 1.2rem;
+    font-size: $big-font-size;
+    padding: 0 0.3rem;
+  }
+}
