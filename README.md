@@ -21,7 +21,7 @@ Differentiators:
 - JavaScript
 - [Node.js](https://nodejs.org/) / [Express.js](https://expressjs.com/)
 - HTML / [SASS](https://sass-lang.com/)
-- [Webpack 5](https://github.com/webpack/webpack)
+- [Webpack](https://github.com/webpack/webpack)
 - [axios](https://www.npmjs.com/package/axios)
 - [particles.js](https://github.com/VincentGarreau/particles.js/)
 - [MeaningCloud API](https://www.meaningcloud.com)
